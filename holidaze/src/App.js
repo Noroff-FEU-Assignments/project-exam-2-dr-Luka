@@ -1,4 +1,3 @@
-import * as React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
@@ -12,7 +11,6 @@ export default function App() {
   return (
     <div className="page">
       <Navigation />
-      <h1>Welcome to React Router!</h1>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="Contact" element={<Contact />} />
