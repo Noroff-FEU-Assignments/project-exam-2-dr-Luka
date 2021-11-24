@@ -1,0 +1,23 @@
+.navbar {
+  background-color: $color-ui-primary;
+}
+.me-auto {
+  padding-top: 30px;
+}
+a.navbar-brand {
+  font-family: $font-logo;
+  font-size: 2.3em;
+  color: $color-primary;
+}
+a.nav-link {
+  text-align: center;
+  font-family: $font-primary;
+  font-size: 1.6em;
+  height: 50px;
+  border: black 1px solid;
+  border-radius: 25px;
+  margin: 15px;
+}
+.navLogo {
+  width: 50px;
+}

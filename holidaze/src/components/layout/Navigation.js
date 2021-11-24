@@ -1,11 +1,13 @@
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import logo from "../.././images/logo.png";
 
 export default function Navigation() {
   return (
-    <Navbar collapseOnSelect expand="lg">
-      <Container>
+    <Navbar collapseOnSelect expand="md">
+      <Container className="navigation">
+        <img src={logo} className="navLogo" alt="Holidaze Logo" />
         <Navbar.Brand href="/">Holidaze</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
