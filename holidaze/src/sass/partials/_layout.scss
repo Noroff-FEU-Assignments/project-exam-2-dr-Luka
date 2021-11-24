@@ -4,3 +4,12 @@ body {
 .page {
   min-height: 100vh;
 }
+a {
+  text-decoration: none;
+  color: $color-primary;
+}
+h2 {
+  text-align: center;
+  font-family: $font-primary;
+  margin-top: 30px;
+}

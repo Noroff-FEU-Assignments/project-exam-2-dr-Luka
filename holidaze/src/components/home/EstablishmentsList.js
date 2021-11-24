@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { API } from "../../constants/api";
 
-import EstablishmentCard from "../layout/EstablishmentCard";
+import EstablishmentCard from "./EstablishmentCard.js";
 
 export default function EstablishmentList() {
   const [Establishments, setEstablishments] = useState([]);
@@ -43,7 +43,7 @@ export default function EstablishmentList() {
         const { id, name, description } = Establishment;
         return (
           <EstablishmentCard
-            key={id}
+            key={name}
             id={id}
             name={name}
             description={description}

@@ -2,7 +2,7 @@ import Heading from "../layout/Heading";
 export default function Contact() {
   return (
     <>
-      <Heading content="Contact" size="1" />
+      <Heading content="Contact" size="2" />
     </>
   );
 }

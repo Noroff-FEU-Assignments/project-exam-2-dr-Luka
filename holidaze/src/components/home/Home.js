@@ -3,7 +3,7 @@ import EstablishmentList from "./EstablishmentsList";
 export default function Home() {
   return (
     <>
-      <Heading content="Home" size="1" />
+      <Heading content="All Offers" size="2" />
       <EstablishmentList />
     </>
   );
