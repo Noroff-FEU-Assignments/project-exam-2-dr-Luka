@@ -7,19 +7,19 @@ h5 {
 .card-p {
   font-family: $font-secondary;
   font-weight: 300;
-  max-height: 150px;
+  height: 100px;
   width: 90%;
   overflow: scroll;
   margin: auto;
 }
-.card-image {
+.card-image img {
   width: 100%;
   height: 200px;
   background-color: $color-ui-primary;
   border-radius: 10px 10px 0px 0px;
 }
 .card {
-  width: 300px;
-  margin: 20px auto;
+  max-width: 300px;
+  margin: 20px;
   border-radius: 10px;
 }

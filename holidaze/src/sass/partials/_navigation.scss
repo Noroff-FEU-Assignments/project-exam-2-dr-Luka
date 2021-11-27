@@ -11,10 +11,10 @@ a.nav-link {
   text-align: center;
   font-family: $font-primary;
   font-size: 1.6em;
-  height: 50px;
   border: black 1px solid;
   border-radius: 25px;
-  margin: 15px;
+  margin: 10px;
+  min-width: 150px;
 }
 .navLogo {
   width: 50px;

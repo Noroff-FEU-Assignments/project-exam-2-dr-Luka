@@ -38,7 +38,7 @@ export default function EstablishmentList() {
   }
 
   return (
-    <div className="Establishments">
+    <div className="establishments">
       {Establishments.map(function (Establishment) {
         const { id, name, description } = Establishment;
         return (
