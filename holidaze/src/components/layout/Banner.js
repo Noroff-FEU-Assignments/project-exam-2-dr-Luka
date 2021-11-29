@@ -1,4 +1,4 @@
-import { Typeahead } from "react-bootstrap-typeahead";
+import { Typeahead, Menu, MenuItem } from "react-bootstrap-typeahead";
 import { useState, useEffect } from "react";
 import { baseURL } from "../../constants/api";
 import "react-bootstrap-typeahead/css/Typeahead.css";
@@ -29,12 +29,20 @@ export default function Banner() {
       <p className="banner-p">Where would you like to stay?</p>
       <div className="banner-search">
         <Typeahead
-          id="basic-typeahead-single"
-          labelKey="name"
-          onChange={setSingleSelections}
           options={Establishments}
-          placeholder="Search your next home..."
-          selected={singleSelections}
+          renderMenu={(results, menuProps) => (
+            <Menu {...menuProps}>
+              {results.map((result, index) => (
+                <MenuItem
+                  onClick={() => console.log("click!")}
+                  option={result}
+                  position={index}
+                >
+                  {result.label}
+                </MenuItem>
+              ))}
+            </Menu>
+          )}
         />
       </div>
     </div>
