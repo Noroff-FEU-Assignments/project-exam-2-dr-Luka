@@ -1,10 +1,8 @@
-import { Typeahead, Menu, MenuItem } from "react-bootstrap-typeahead";
 import { useState, useEffect } from "react";
 import { baseURL } from "../../constants/api";
-import "react-bootstrap-typeahead/css/Typeahead.css";
+import { ReactSearchAutocomplete } from "react-search-autocomplete";
 
 export default function Banner() {
-  const [singleSelections, setSingleSelections] = useState([]);
   const [Establishments, setEstablishments] = useState([]);
   useEffect(function () {
     async function fetchData() {
@@ -24,25 +22,17 @@ export default function Banner() {
     fetchData();
   }, []);
 
+  const handleOnSelect = (item) => {
+    console.log(item);
+  };
   return (
     <div className="banner">
       <p className="banner-p">Where would you like to stay?</p>
       <div className="banner-search">
-        <Typeahead
-          options={Establishments}
-          renderMenu={(results, menuProps) => (
-            <Menu {...menuProps}>
-              {results.map((result, index) => (
-                <MenuItem
-                  onClick={() => console.log("click!")}
-                  option={result}
-                  position={index}
-                >
-                  {result.label}
-                </MenuItem>
-              ))}
-            </Menu>
-          )}
+        <ReactSearchAutocomplete
+          items={Establishments}
+          onSelect={handleOnSelect}
+          placeholder="Find your next home..."
         />
       </div>
     </div>

@@ -1,3 +1,19 @@
+.banner {
+  font-family: $font-primary;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../images/BergenB&W.jpg");
+
+  background-color: $color-background-secondary;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 200px 0px;
+  height: 95vh;
+  background-size: cover;
+  color: $color-background-secondary;
+  font-weight: 300;
+  font-size: 2em;
+}
 .banner-search {
   max-width: 250px;
   margin: 0 auto;
