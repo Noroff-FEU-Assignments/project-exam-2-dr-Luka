@@ -1,1 +1,1 @@
-export const API = "http://localhost:1337/establishments";
+export const baseURL = "https://holidaze-project.herokuapp.com";

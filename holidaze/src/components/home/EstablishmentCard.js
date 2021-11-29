@@ -1,23 +1,18 @@
 import { Link } from "react-router-dom";
 
-export default function EstablishmentCard({ id, name, description }) {
+export default function EstablishmentCard({ id, name, description, image }) {
   return (
-    <Link to={`detail/${id}`}>
-      <div className="card">
-        <div className="card-image">
-          <img
-            src="http://localhost:1337/uploads/bernard_hermant_Iwb_J_Jfo_C80_unsplash_4ba52f0822.jpg"
-            alt="Hotel Front"
-          />
-        </div>
-        <div className="card-info">
-          <h5>{name}</h5>
-          <p className="card-p">{description}</p>
-        </div>
-        <Link to={`detail/${id}`}>
-          <button className="BtnConfirm">View More</button>
-        </Link>
+    <div className="card">
+      <div className="card-image">
+        <img src={image} alt="Hotel Front" />
       </div>
-    </Link>
+      <div className="card-info">
+        <h5>{name}</h5>
+        <p className="card-p">{description}</p>
+      </div>
+      <Link to={`details/${id}`}>
+        <button className="BtnConfirm">View More</button>
+      </Link>
+    </div>
   );
 }

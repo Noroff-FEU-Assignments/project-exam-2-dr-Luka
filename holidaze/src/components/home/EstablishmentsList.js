@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API } from "../../constants/api";
+import { baseURL } from "../../constants/api";
 
 import EstablishmentCard from "./EstablishmentCard.js";
 
@@ -11,7 +11,8 @@ export default function EstablishmentList() {
   useEffect(function () {
     async function fetchData() {
       try {
-        const response = await fetch(API);
+        const url = baseURL + "/establishments";
+        const response = await fetch(url);
 
         if (response.ok) {
           const json = await response.json();
@@ -40,13 +41,14 @@ export default function EstablishmentList() {
   return (
     <div className="establishments">
       {Establishments.map(function (Establishment) {
-        const { id, name, description } = Establishment;
+        const { id, name, description, images } = Establishment;
         return (
           <EstablishmentCard
             key={name}
             id={id}
             name={name}
             description={description}
+            image={images[0].url}
           />
         );
       })}
