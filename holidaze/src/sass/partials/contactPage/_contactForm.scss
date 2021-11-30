@@ -1,0 +1,25 @@
+.form-error {
+  text-align: center;
+  font-family: $font-secondary;
+}
+.form-info {
+  width: 80%;
+  margin: 10px auto 0px auto;
+  font-family: $font-primary;
+  border: 1px solid $color-ui-primary;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.form-message {
+  font-family: $font-primary;
+  width: 80%;
+  margin: 10px auto 0px auto;
+  border: 1px solid $color-ui-primary;
+  border-radius: 5px;
+  padding: 5px 10px;
+  min-height: 150px;
+}
+.contactForm {
+  margin: 0 auto;
+  max-width: 80%;
+}
