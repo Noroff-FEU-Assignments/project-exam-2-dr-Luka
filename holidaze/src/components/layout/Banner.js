@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { baseURL } from "../../constants/api";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import { useNavigate } from "react-router-dom";
 
 export default function Banner() {
   const [Establishments, setEstablishments] = useState([]);
@@ -22,8 +23,12 @@ export default function Banner() {
     fetchData();
   }, []);
 
-  const handleOnSelect = (item) => {
-    console.log(item);
+  const HandleOnSelect = (item) => {
+    const route = `/details/${item.id}`;
+    const navigate = useNavigate();
+    setTimeout(() => {
+      navigate(route);
+    }, 100);
   };
   return (
     <div className="banner">
@@ -31,7 +36,7 @@ export default function Banner() {
       <div className="banner-search">
         <ReactSearchAutocomplete
           items={Establishments}
-          onSelect={handleOnSelect}
+          onSelect={HandleOnSelect}
           placeholder="Find your next home..."
         />
       </div>
