@@ -29,14 +29,24 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("name")} placeholder="Name" />
-      {errors.name && <span>{errors.name.message}</span>}
+      <input {...register("name")} placeholder="Name" className="form-info" />
+      {errors.name && <span class="form-error">{errors.name.message}</span>}
 
-      <input {...register("email")} placeholder="Email" />
-      {errors.email && <span>{errors.email.message}</span>}
+      <input
+        {...register("email")}
+        placeholder="Email"
+        className="form-email"
+      />
+      {errors.email && <span class="form-info">{errors.email.message}</span>}
 
-      <textarea {...register("message")} placeholder="Message" />
-      {errors.message && <span>{errors.message.message}</span>}
+      <textarea
+        {...register("message")}
+        placeholder="Message"
+        className="form-message"
+      />
+      {errors.message && (
+        <span class="form-error">{errors.message.message}</span>
+      )}
 
       <button>Send</button>
     </form>

@@ -1,7 +1,7 @@
-@import "partials/base.scss";
-@import "partials/navigation.scss";
-@import "partials/layout.scss";
-@import "partials/card.scss";
-@import "partials/home.scss";
-@import "partials/banner.scss";
-@import "partials/loader.scss";
+@import "partials/base";
+@import "partials/navigation";
+@import "partials/layout";
+@import "partials/homepage/card";
+@import "partials/homepage/home";
+@import "partials/homepage/banner";
+@import "partials/loader";
