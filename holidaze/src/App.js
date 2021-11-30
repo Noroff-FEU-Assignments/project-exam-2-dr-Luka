@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import Contact from "./components/contact/Contact";
 import Login from "./components/login/Login";
+import Messages from "./components/admin/messages/Messages";
 
 import Navigation from "./components/layout/Navigation";
 
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="Contact" element={<Contact />} />
         <Route path="Login" element={<Login />} />
+        <Route path="Messages" element={<Messages />} />
       </Routes>
     </div>
   );
