@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <Heading content="All Offers" size="2" />
+      <Heading content="Our Offers" size="2" />
       <EstablishmentList />
     </>
   );

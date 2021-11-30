@@ -23,9 +23,11 @@ export default function Banner() {
     fetchData();
   }, []);
 
-  const HandleOnSelect = (item) => {
+  const navigate = useNavigate();
+
+  const handleOnSelect = (item) => {
     const route = `/details/${item.id}`;
-    const navigate = useNavigate();
+
     setTimeout(() => {
       navigate(route);
     }, 100);
@@ -36,7 +38,7 @@ export default function Banner() {
       <div className="banner-search">
         <ReactSearchAutocomplete
           items={Establishments}
-          onSelect={HandleOnSelect}
+          onSelect={handleOnSelect}
           placeholder="Find your next home..."
         />
       </div>
