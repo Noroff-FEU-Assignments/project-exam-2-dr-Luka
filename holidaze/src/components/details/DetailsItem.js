@@ -1,22 +1,23 @@
 import { useState, useEffect } from "react";
-import { baseURL } from "../../../constants/api";
-import MessageItem from "./MessageItem";
+import { useParams } from "react-router-dom";
+import { baseURL } from "../../constants/api";
 
-export default function MessagesList() {
-  const [Messages, setMessages] = useState([]);
+export default function DetailsItem() {
+  const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { id } = useParams();
 
   useEffect(function () {
     async function fetchData() {
       try {
-        const url = baseURL + "/messages";
+        const url = baseURL + "/establishments/" + id;
         const response = await fetch(url);
 
         if (response.ok) {
           const json = await response.json();
-
-          setMessages(json);
+          setDetails(json);
+          console.log(json);
         } else {
           setError("An error occured");
         }
@@ -45,19 +46,14 @@ export default function MessagesList() {
   }
 
   return (
-    <div className="messagesList">
-      {Messages.map(function (messageItem) {
-        const { id, author, email, message, updated_at } = messageItem;
-        return (
-          <MessageItem
-            key={id}
-            name={author}
-            email={email}
-            message={message}
-            time={updated_at}
-          />
-        );
-      })}
+    <div className="card">
+      <div className="card-image">
+        <img src={details.images[0].url} alt="Hotel Front" />
+      </div>
+      <div className="card-info">
+        <h5>{details.name}</h5>
+        <p className="card-p">{details.description}</p>
+      </div>
     </div>
   );
 }

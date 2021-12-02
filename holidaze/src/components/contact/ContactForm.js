@@ -1,9 +1,11 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import { Axios } from "axios";
+import { baseURL } from "../../constants/api";
 
 const schema = yup.object().shape({
-  name: yup
+  author: yup
     .string()
     .required("Please enter your name!")
     .min(1, "Name must be at least 1 characters!"),
@@ -18,6 +20,7 @@ const schema = yup.object().shape({
 });
 
 export default function ContactForm() {
+  const url = baseURL + "/messages";
   const {
     register,
     handleSubmit,
@@ -26,14 +29,23 @@ export default function ContactForm() {
     resolver: yupResolver(schema),
   });
 
-  function onSubmit(data) {
-    console.log(data);
+  async function onSubmit(data) {
+    const axios = require("axios").default;
+
+    axios.post(url, data).then(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contactForm">
       <input
-        {...register("name")}
+        {...register("author")}
         placeholder="Name"
         className="form-info block"
       />

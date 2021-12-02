@@ -1,22 +1,22 @@
 import { useState, useEffect } from "react";
 import { baseURL } from "../../../constants/api";
-import MessageItem from "./MessageItem";
+import EnquiriesItem from "./EnquiriesItem";
 
-export default function MessagesList() {
-  const [Messages, setMessages] = useState([]);
+export default function EnquiriesList() {
+  const [Enquiries, setEnquiries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(function () {
     async function fetchData() {
       try {
-        const url = baseURL + "/messages";
+        const url = baseURL + "/enquiries";
         const response = await fetch(url);
 
         if (response.ok) {
           const json = await response.json();
 
-          setMessages(json);
+          setEnquiries(json);
         } else {
           setError("An error occured");
         }
@@ -45,15 +45,23 @@ export default function MessagesList() {
   }
 
   return (
-    <div className="messagesList">
-      {Messages.map(function (messageItem) {
-        const { id, author, email, message, updated_at } = messageItem;
+    <div className="EnquiriesList">
+      {Enquiries.map(function (enquiriesItem) {
+        const {
+          id,
+          name,
+          establishment,
+          CheckInDate,
+          CheckOutDate,
+          updated_at,
+        } = enquiriesItem;
         return (
-          <MessageItem
+          <EnquiriesItem
             key={id}
-            name={author}
-            email={email}
-            message={message}
+            name={name}
+            establishment={establishment}
+            checkInDate={CheckInDate}
+            checkOutDate={CheckOutDate}
             time={updated_at}
           />
         );

@@ -16,7 +16,6 @@ export default function EstablishmentList() {
 
         if (response.ok) {
           const json = await response.json();
-
           setEstablishments(json);
         } else {
           setError("An error occured");

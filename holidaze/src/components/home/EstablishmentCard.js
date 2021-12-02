@@ -10,7 +10,7 @@ export default function EstablishmentCard({ id, name, description, image }) {
         <h5>{name}</h5>
         <p className="card-p">{description}</p>
       </div>
-      <Link to={`details/${id}`}>
+      <Link to={`Details/${id}`}>
         <button className="BtnConfirm">View More</button>
       </Link>
     </div>
