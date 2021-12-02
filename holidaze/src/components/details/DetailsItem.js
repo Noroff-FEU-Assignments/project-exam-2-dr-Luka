@@ -53,6 +53,8 @@ export default function DetailsItem() {
       <div className="card-info">
         <h5>{details.name}</h5>
         <p className="card-p">{details.description}</p>
+        <h5>{details.price},-NOK</h5>
+        <h5>{details.address}</h5>
       </div>
     </div>
   );

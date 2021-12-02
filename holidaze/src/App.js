@@ -8,6 +8,7 @@ import Messages from "./components/admin/messages/Messages";
 import Enquiries from "./components/admin/enquiries/Enquiries";
 import Details from "./components/details/Details";
 import Dashboard from "./components/admin/dashboard/Dashboard";
+import CreateNew from "./components/admin/createNew/CreateNew";
 
 import Navigation from "./components/layout/Navigation";
 
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="Enquiries" element={<Enquiries />} />
         <Route path="Details/:id" element={<Details />} />
         <Route path="Dashboard" element={<Dashboard />} />
+        <Route path="CreateNew" element={<CreateNew />} />
       </Routes>
     </div>
   );
