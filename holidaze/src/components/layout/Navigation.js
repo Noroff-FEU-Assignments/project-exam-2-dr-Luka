@@ -16,7 +16,7 @@ export default function Navigation() {
             <Nav.Link href="/Contact">Contact</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} href="/Dashboard">
+            <Nav.Link eventKey={2} href="/Login">
               Login
             </Nav.Link>
           </Nav>

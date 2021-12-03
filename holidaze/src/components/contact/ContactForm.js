@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-// import { Axios } from "axios";
 import { baseURL } from "../../constants/api";
 
 const schema = yup.object().shape({
@@ -49,8 +48,8 @@ export default function ContactForm() {
         placeholder="Name"
         className="form-info block"
       />
-      {errors.name && (
-        <span className="form-error block">{errors.name.message}</span>
+      {errors.author && (
+        <span className="form-error block">{errors.author.message}</span>
       )}
 
       <input
