@@ -1,6 +1,16 @@
 import Heading from "../../layout/Heading";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../../../context/AuthContext";
+
 export default function Dashboard() {
+  const [auth, setAuth] = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  function logout() {
+    setAuth(null);
+    navigate("/");
+  }
   return (
     <>
       <Heading content="Dashboard" size="2" />
@@ -12,6 +22,11 @@ export default function Dashboard() {
       </Link>
       <Link to={`/CreateNew`}>
         <button className="dashButton block">Create Establishment</button>
+      </Link>
+      <Link to={`/`}>
+        <button onClick={logout} className="dashButton block">
+          Logout
+        </button>
       </Link>
     </>
   );

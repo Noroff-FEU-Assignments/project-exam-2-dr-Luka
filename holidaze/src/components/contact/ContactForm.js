@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { baseURL } from "../../constants/api";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router";
 
 const schema = yup.object().shape({
   author: yup
@@ -19,6 +21,10 @@ const schema = yup.object().shape({
 });
 
 export default function ContactForm() {
+  const [submitting, setSubmitting] = useState(false);
+  const [loginError, setLoginError] = useState(null);
+  const navigate = useNavigate();
+
   const url = baseURL + "/messages";
   const {
     register,
@@ -29,11 +35,14 @@ export default function ContactForm() {
   });
 
   async function onSubmit(data) {
+    setSubmitting(true);
     const axios = require("axios").default;
 
     axios.post(url, data).then(
       (response) => {
         console.log(response);
+        setSubmitting(false);
+        navigate("/MessageSent");
       },
       (error) => {
         console.log(error);
@@ -43,34 +52,36 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contactForm">
-      <input
-        {...register("author")}
-        placeholder="Name"
-        className="form-info block"
-      />
-      {errors.author && (
-        <span className="form-error block">{errors.author.message}</span>
-      )}
+      <fieldset disabled={submitting}>
+        <input
+          {...register("author")}
+          placeholder="Name"
+          className="form-info block"
+        />
+        {errors.author && (
+          <span className="form-error block">{errors.author.message}</span>
+        )}
 
-      <input
-        {...register("email")}
-        placeholder="Email"
-        className="form-info block"
-      />
-      {errors.email && (
-        <span className="form-error block">{errors.email.message}</span>
-      )}
+        <input
+          {...register("email")}
+          placeholder="Email"
+          className="form-info block"
+        />
+        {errors.email && (
+          <span className="form-error block">{errors.email.message}</span>
+        )}
 
-      <textarea
-        {...register("message")}
-        placeholder="Message"
-        className="form-message block"
-      />
-      {errors.message && (
-        <span className="form-error block">{errors.message.message}</span>
-      )}
+        <textarea
+          {...register("message")}
+          placeholder="Message"
+          className="form-message block"
+        />
+        {errors.message && (
+          <span className="form-error block">{errors.message.message}</span>
+        )}
 
-      <button className="BtnConfirm">Send</button>
+        <button className="BtnConfirm">Send</button>
+      </fieldset>
     </form>
   );
 }

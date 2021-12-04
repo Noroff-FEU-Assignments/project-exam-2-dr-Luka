@@ -2,8 +2,12 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import logo from "../.././images/logo.png";
+import AuthContext from "../../context/AuthContext";
+import { useContext } from "react";
 
 export default function Navigation() {
+  const [auth, setAuth] = useContext(AuthContext);
+
   return (
     <Navbar collapseOnSelect expand="md">
       <Container className="navigation">
@@ -16,9 +20,15 @@ export default function Navigation() {
             <Nav.Link href="/Contact">Contact</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} href="/Login">
-              Login
-            </Nav.Link>
+            {auth ? (
+              <Nav.Link eventKey={2} href="/Dashboard">
+                Dashboard
+              </Nav.Link>
+            ) : (
+              <Nav.Link eventKey={2} href="/Login">
+                Login
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
