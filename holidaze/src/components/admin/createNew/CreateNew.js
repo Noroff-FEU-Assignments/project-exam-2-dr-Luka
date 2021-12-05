@@ -1,5 +1,6 @@
 import Heading from "../../layout/Heading";
 import { useNavigate } from "react-router-dom";
+import CreateNewForm from "./CreateNewForm";
 
 export default function CreateNew() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ export default function CreateNew() {
       <button onClick={GoBack} className="BtnConfirm">
         Back to Dashboard
       </button>
+      <CreateNewForm />
     </>
   );
 }

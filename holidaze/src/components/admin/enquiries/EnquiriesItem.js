@@ -3,14 +3,13 @@ export default function EnquiriesItem({
   name,
   checkInDate,
   checkOutDate,
-  time,
 }) {
   return (
     <div className="enquiryItem">
-      <h5>{name}</h5>
-      <h5>{establishment}</h5>
-      <h5>{checkInDate}</h5>
-      <h5>{checkOutDate}</h5>
+      <p className="enquiryName">Name: {name}</p>
+      <p className="enquiryHotel">{establishment}</p>
+      <p className="enquiryDate">Check in Date: {checkInDate}</p>
+      <p className="enquiryDate">Check out Date: {checkOutDate}</p>
     </div>
   );
 }

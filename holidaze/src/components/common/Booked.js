@@ -7,7 +7,7 @@ export default function MessageSent() {
   }
   return (
     <div className="MessageSent">
-      <span className="sent">Message is Sent!</span>
+      <span>Thank you for Booking</span>
       <button onClick={GoBack} className="BtnConfirm">
         Back to Home
       </button>

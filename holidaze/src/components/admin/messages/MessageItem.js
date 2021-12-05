@@ -1,12 +1,11 @@
-export default function MessageItem({ email, name, message, time }) {
+export default function MessageItem({ email, name, message }) {
   return (
-    <div className="message">
-      <div className="card-info">
-        <h5>{name}</h5>
-        <h5>{email}</h5>
-        <h5>{time}</h5>
-        <p className="card-p">{message}</p>
+    <div className="messageContainer">
+      <div className="senderInfo">
+        <p>{name}</p>
+        <p>{email}</p>
       </div>
+      <p className="message">{message}</p>
     </div>
   );
 }

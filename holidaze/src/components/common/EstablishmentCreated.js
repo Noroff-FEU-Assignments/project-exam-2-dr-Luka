@@ -1,15 +1,15 @@
 import { useNavigate } from "react-router";
 
-export default function MessageSent() {
+export default function EstablishmentCreated() {
   const navigate = useNavigate();
   function GoBack() {
-    navigate("/");
+    navigate("/Dashboard");
   }
   return (
     <div className="MessageSent">
-      <span className="sent">Message is Sent!</span>
+      <span className="sent">Created!</span>
       <button onClick={GoBack} className="BtnConfirm">
-        Back to Home
+        Back Dashboard
       </button>
     </div>
   );

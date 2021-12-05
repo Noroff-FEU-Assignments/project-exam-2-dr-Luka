@@ -54,7 +54,6 @@ export default function EstablishmentList() {
             id={id}
             name={name}
             description={description}
-            image={images[0].url}
           />
         );
       })}
