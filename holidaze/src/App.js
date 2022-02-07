@@ -23,20 +23,20 @@ export default function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="Contact" element={<Contact />} />
-          <Route path="Login" element={<Login />} />
-          <Route path="Messages" element={<Messages />} />
-          <Route path="Enquiries" element={<Enquiries />} />
-          <Route path="Details/:id" element={<Details />} />
-          <Route path="Dashboard" element={<Dashboard />} />
-          <Route path="CreateNew" element={<CreateNew />} />
-          <Route path="MessageSent" element={<MessageSent />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Messages" element={<Messages />} />
+          <Route path="/Enquiries" element={<Enquiries />} />
+          <Route path="/Details/:id" element={<Details />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/CreateNew" element={<CreateNew />} />
+          <Route path="/MessageSent" element={<MessageSent />} />
           <Route
-            path="EstablishmentCreated"
+            path="/EstablishmentCreated"
             element={<EstablishmentCreated />}
           />
 
-          <Route path="Booked" element={<Booked />} />
+          <Route path="/Booked" element={<Booked />} />
         </Routes>
       </div>
     </AuthProvider>
